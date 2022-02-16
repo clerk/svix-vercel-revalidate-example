@@ -13,7 +13,6 @@ export async function getStaticProps(context) {
     id: u.id,
     firstName: u.firstName,
     lastName: u.lastName,
-    profileImageUrl: u.profileImageUrl,
     createdAt: u.createdAt,
   }));
   return {
@@ -68,14 +67,9 @@ export default function Home({ users }) {
             {users.map((u) => (
               <li key={u.id}>
                 <div className="space-y-4">
-                  <img
-                    className="mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24"
-                    src={u.profileImageUrl}
-                    alt={`${u.firstName} ${u.lastName} profile image`}
-                  />
                   <div className="space-y-2">
                     <div className="text-xs font-medium lg:text-sm">
-                      <h3>
+                      <h3 className="text-sm lg:text-base">
                         {u.firstName} {u.lastName}
                       </h3>
                       <p className="text-indigo-600">
