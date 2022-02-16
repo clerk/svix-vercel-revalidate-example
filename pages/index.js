@@ -69,7 +69,7 @@ export default function Home({ users }) {
                 <div className="space-y-4">
                   <div className="space-y-2">
                     <div className="text-xs font-medium lg:text-sm">
-                      <h3 className="text-sm lg:text-base">
+                      <h3 className="text-sm lg:text-base overflow-ellipsis overflow-hidden whitespace-nowrap">
                         {u.firstName} {u.lastName}
                       </h3>
                       <p className="text-indigo-600">
@@ -94,15 +94,30 @@ export default function Home({ users }) {
               <p className="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide">
                 Powered by
               </p>
-              <div className="col-span-1 opacity-50 flex justify-center md:col-span-2 lg:col-span-1">
+              <a
+                href=""
+                target="_blank"
+                rel="noreferrer"
+                className="col-span-1 opacity-50 flex justify-center md:col-span-2 lg:col-span-1"
+              >
                 <img className="h-6" src="/vercel.svg" alt="Tuple" />
-              </div>
-              <div className="grayscale opacity-60 col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+              </a>
+              <a
+                href=""
+                target="_blank"
+                rel="noreferrer"
+                className="grayscale opacity-60 col-span-1 flex justify-center md:col-span-2 lg:col-span-1"
+              >
                 <img className="h-7" src="/svix.svg" alt="Mirage" />
-              </div>
-              <div className="grayscale opacity-75 col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+              </a>
+              <a
+                href=""
+                target="_blank"
+                rel="noreferrer"
+                className="grayscale opacity-75 col-span-1 flex justify-center md:col-span-2 lg:col-span-1"
+              >
                 <img className="h-7" src="/clerk.svg" alt="StaticKit" />
-              </div>
+              </a>
             </div>
           </div>
         </div>
