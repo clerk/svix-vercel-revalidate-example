@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ClerkLoaded, SignUpButton, SignedOut } from "@clerk/nextjs";
 import clerk from "@clerk/clerk-sdk-node";
 import Footer from "../components/footer";
+import Avatar from "boring-avatars";
 
 export async function getStaticProps(context) {
   const users = (
@@ -71,6 +72,21 @@ export default function Home({ users }) {
             {users.map((u) => (
               <li key={u.id}>
                 <div className="space-y-4">
+                  <div className="mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24 avatar">
+                    <Avatar
+                      size={96}
+                      className="test"
+                      name={u.id}
+                      variant="beam"
+                      colors={[
+                        "#92A1C6",
+                        "#146A7C",
+                        "#F0AB3D",
+                        "#C271B4",
+                        "#C20D90",
+                      ]}
+                    />
+                  </div>
                   <div className="space-y-2">
                     <div className="text-xs font-medium lg:text-sm">
                       <h3 className="text-sm lg:text-base overflow-ellipsis overflow-hidden whitespace-nowrap">
