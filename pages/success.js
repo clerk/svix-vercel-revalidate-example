@@ -23,11 +23,12 @@ export default function Home({ users }) {
             Svix just sent a webhook to rebuild the list of recent sign ups.
           </p>
           <div className="mt-5 flex justify-center space-x-4">
-            <Link href="/">
-              <a className="rounded-md shadow px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-                See recent sign ups
-              </a>
-            </Link>
+            <a
+              href="/"
+              className="rounded-md shadow px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
+            >
+              See recent sign ups
+            </a>
           </div>
         </div>
       </main>
