@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import { ClerkLoaded, SignUpButton } from "@clerk/nextjs";
+import { ClerkLoaded, SignUpButton, SignedOut } from "@clerk/nextjs";
 import clerk from "@clerk/clerk-sdk-node";
 
 export async function getStaticProps(context) {
@@ -49,11 +49,13 @@ export default function Home({ users }) {
               >
                 How it works
               </a>
-              <SignUpButton>
-                <button className="rounded-md shadow px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-                  Sign up
-                </button>
-              </SignUpButton>
+              <SignedOut>
+                <SignUpButton>
+                  <button className="rounded-md shadow px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+                    Sign up
+                  </button>
+                </SignUpButton>
+              </SignedOut>
             </ClerkLoaded>
           </div>
         </div>
