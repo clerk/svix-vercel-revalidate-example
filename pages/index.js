@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { ClerkLoaded, SignUpButton, SignedOut } from "@clerk/nextjs";
 import clerk from "@clerk/clerk-sdk-node";
+import Footer from "../components/footer";
 
 export async function getStaticProps(context) {
   const users = (
@@ -38,7 +39,7 @@ export default function Home({ users }) {
             It is automatically rebuilt with on-demand Incremental Static
             Regeneration every time a user signs up.
           </p>
-          <div className="mt-5 flex justify-center h-[62px] space-x-4">
+          <div className="mt-5 flex justify-center space-x-4 h-[50px] md:h-[62px]">
             <ClerkLoaded>
               <a
                 target="_blank"
@@ -87,41 +88,7 @@ export default function Home({ users }) {
           </ul>
         </div>
       </main>
-      <footer className="fixed bottom-0 left-0 right-0">
-        <div className="bg-gray-100">
-          <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 mt-12">
-            <div className="grayscale flex space-x-12 justify-center items-center">
-              <p className="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide">
-                Powered by
-              </p>
-              <a
-                href=""
-                target="_blank"
-                rel="noreferrer"
-                className="col-span-1 opacity-50 flex justify-center md:col-span-2 lg:col-span-1"
-              >
-                <img className="h-6" src="/vercel.svg" alt="Tuple" />
-              </a>
-              <a
-                href=""
-                target="_blank"
-                rel="noreferrer"
-                className="grayscale opacity-60 col-span-1 flex justify-center md:col-span-2 lg:col-span-1"
-              >
-                <img className="h-7" src="/svix.svg" alt="Mirage" />
-              </a>
-              <a
-                href=""
-                target="_blank"
-                rel="noreferrer"
-                className="grayscale opacity-75 col-span-1 flex justify-center md:col-span-2 lg:col-span-1"
-              >
-                <img className="h-7" src="/clerk.svg" alt="StaticKit" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

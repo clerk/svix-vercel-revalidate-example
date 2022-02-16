@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Confetti from "react-confetti";
-import { useState, useEffect } from "react";
+import Footer from "../components/footer";
 
 export default function Home({ users }) {
   return (
@@ -22,7 +22,7 @@ export default function Home({ users }) {
           <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
             Svix just sent a webhook to rebuild the list of recent sign ups.
           </p>
-          <div className="mt-5 flex justify-center h-[62px] space-x-4">
+          <div className="mt-5 flex justify-center space-x-4">
             <Link href="/">
               <a className="rounded-md shadow px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
                 See recent sign ups
@@ -31,26 +31,7 @@ export default function Home({ users }) {
           </div>
         </div>
       </main>
-      <footer className="fixed bottom-0 left-0 right-0">
-        <div className="bg-gray-100">
-          <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 mt-12">
-            <div className="grayscale flex space-x-12 justify-center items-center">
-              <p className="text-center text-sm font-semibold uppercase text-gray-500 tracking-wide">
-                Powered by
-              </p>
-              <div className="col-span-1 opacity-50 flex justify-center md:col-span-2 lg:col-span-1">
-                <img className="h-6" src="/vercel.svg" alt="Tuple" />
-              </div>
-              <div className="grayscale opacity-60 col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                <img className="h-7" src="/svix.svg" alt="Mirage" />
-              </div>
-              <div className="grayscale opacity-75 col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                <img className="h-7" src="/clerk.svg" alt="StaticKit" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
