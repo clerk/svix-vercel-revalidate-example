@@ -7,7 +7,7 @@ export async function getStaticProps(context) {
   const users = (
     await clerk.users.getUserList({
       orderBy: "-created_at",
-      limit: 64,
+      limit: 500,
     })
   ).map((u) => ({
     id: u.id,
