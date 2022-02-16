@@ -79,11 +79,11 @@ export default function Home({ users }) {
                       name={u.id}
                       variant="beam"
                       colors={[
-                        "#92A1C6",
-                        "#146A7C",
-                        "#F0AB3D",
-                        "#C271B4",
-                        "#C20D90",
+                        "#B58231",
+                        "#074574",
+                        "#007DB4",
+                        "#00A4DA",
+                        "#07C7EE",
                       ]}
                     />
                   </div>
