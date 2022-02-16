@@ -7,7 +7,7 @@ export async function getStaticProps(context) {
   const users = (
     await clerk.users.getUserList({
       orderBy: "-created_at",
-      limit: 10,
+      limit: 64,
     })
   ).map((u) => ({
     id: u.id,
@@ -50,7 +50,7 @@ export default function Home({ users }) {
                 How it works
               </a>
               <SignedOut>
-                <SignUpButton>
+                <SignUpButton redirectUrl="/success">
                   <button className="rounded-md shadow px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
                     Sign up
                   </button>
