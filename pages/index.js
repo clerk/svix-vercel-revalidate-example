@@ -46,9 +46,9 @@ export default function Home({ users }) {
           Recent sign ups
         </h1>
         <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-          This static page is served directly from Vercel's Edge Network. It is
-          automatically rebuilt every time a user signs up or deletes their
-          account.
+          This static page is served directly from Vercel&apos;s Edge Network.
+          It is automatically rebuilt every time a user signs up or deletes
+          their account.
         </p>
         <div className="mt-5 flex justify-center">
           <SignUpButton>
