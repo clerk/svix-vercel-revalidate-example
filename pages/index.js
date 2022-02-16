@@ -33,7 +33,6 @@ export async function getStaticProps(context) {
 }
 
 export default function Home({ users }) {
-  console.log(users);
   return (
     <>
       <main>
@@ -51,7 +50,7 @@ export default function Home({ users }) {
             It is automatically rebuilt with on-demand Incremental Static
             Regeneration every time a user signs up.
           </p>
-          <div className="mt-5 flex justify-center">
+          <div className="mt-5 flex justify-center h-[62px]">
             <SignUpButton>
               <button className="rounded-md shadow px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
                 Sign up
