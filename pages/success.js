@@ -1,10 +1,14 @@
 import Head from "next/head";
 import Link from "next/link";
-import { SignedIn, SignedOut } from "@clerk/nextjs";
+import Confetti from "react-confetti";
+import { useState, useEffect } from "react";
 
 export default function Home({ users }) {
   return (
     <>
+      {typeof window !== "undefined" && (
+        <Confetti recycle={false} gravity={0.2} numberOfPieces={1000} />
+      )}
       <main>
         <Head>
           <title>Create Next App</title>
