@@ -1,18 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
-import { SignUpButton } from "@clerk/nextjs";
+import { ClerkLoaded, SignUpButton } from "@clerk/nextjs";
 import clerk from "@clerk/clerk-sdk-node";
-
-/* This example requires Tailwind CSS v2.0+ */
-const people = [
-  {
-    name: "Michael Foster",
-    role: "Co-Founder / CTO",
-    imageUrl:
-      "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
-  },
-  // More people...
-];
 
 export async function getStaticProps(context) {
   const users = (
@@ -28,7 +17,7 @@ export async function getStaticProps(context) {
     createdAt: u.createdAt,
   }));
   return {
-    props: { users }, // will be passed to the page component as props
+    props: { users },
   };
 }
 
@@ -50,12 +39,22 @@ export default function Home({ users }) {
             It is automatically rebuilt with on-demand Incremental Static
             Regeneration every time a user signs up.
           </p>
-          <div className="mt-5 flex justify-center h-[62px]">
-            <SignUpButton>
-              <button className="rounded-md shadow px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-                Sign up
-              </button>
-            </SignUpButton>
+          <div className="mt-5 flex justify-center h-[62px] space-x-4">
+            <ClerkLoaded>
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.svix.com/blog/vercel-on-demand-isr-and-svix/?utm_source=vercel&utm_medium=partner&utm_campaign=vercel-campaign"
+                className="rounded-md shadow px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
+              >
+                How it works
+              </a>
+              <SignUpButton>
+                <button className="rounded-md shadow px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+                  Sign up
+                </button>
+              </SignUpButton>
+            </ClerkLoaded>
           </div>
         </div>
 
