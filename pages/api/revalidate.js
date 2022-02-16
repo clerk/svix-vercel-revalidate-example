@@ -1,7 +1,17 @@
+import { Webhook } from "svix";
+import { buffer } from "micro";
+
 export default async function handler(req, res) {
   // Check for secret to confirm this is a valid request
-  if (req.query.secret !== process.env.SVIX_SECRET) {
-    return res.status(401).json({ message: "Invalid token" });
+  const payload = (await buffer(req)).toString();
+  const headers = req.headers;
+
+  const wh = new Webhook(process.env.SVIX_SECRET);
+  let msg;
+  try {
+    msg = wh.verify(payload, headers);
+  } catch (err) {
+    res.status(500).json({ error: "Webhook verification failed" });
   }
 
   try {
@@ -11,6 +21,6 @@ export default async function handler(req, res) {
   } catch (err) {
     // If there was an error, Next.js will continue
     // to show the last successfully generated page
-    return res.status(500).send("Error revalidating");
+    res.status(500).json({ error: "Revalidation failed" });
   }
 }
