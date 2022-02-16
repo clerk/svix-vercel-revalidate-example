@@ -1,6 +1,12 @@
 import { Webhook } from "svix";
 import { buffer } from "micro";
 
+export const config = {
+  api: {
+    bodyParser: false,
+  },
+};
+
 export default async function handler(req, res) {
   // Check for secret to confirm this is a valid request
   const payload = (await buffer(req)).toString();
