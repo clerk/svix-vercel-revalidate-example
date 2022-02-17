@@ -16,7 +16,7 @@ export default function Footer() {
               <img
                 className="mx-auto h-4 sm:h-6"
                 src="/vercel.svg"
-                alt="Tuple"
+                alt="Vercel"
               />
             </a>
             <a
@@ -25,11 +25,7 @@ export default function Footer() {
               rel="noreferrer"
               className="grayscale opacity-60"
             >
-              <img
-                className="mx-auto h-5 sm:h-7"
-                src="/svix.svg"
-                alt="Mirage"
-              />
+              <img className="mx-auto h-5 sm:h-7" src="/svix.svg" alt="Svix" />
             </a>
             <a
               href="https://clerk.dev?utm_source=vercel&amp;utm_medium=partner&amp;utm_campaign=odisr"
@@ -40,7 +36,7 @@ export default function Footer() {
               <img
                 className="mx-auto h-5 sm:h-7"
                 src="/clerk.svg"
-                alt="StaticKit"
+                alt="Clerk"
               />
             </a>
           </div>
